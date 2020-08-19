@@ -15,7 +15,8 @@ function getInformation()
     name = "testItem"
     functions = {"test"}
     numReturns = 0
-    return name, functions, numReturns
+    imageBounds = {0, 96, 15, 105}
+    return name, functions, numReturns, imageBounds
 end
 ```
 
@@ -34,7 +35,8 @@ function getInformation()
     name = "testItem"
     functions = {"testAll", "testSome", "testNone", "testRemoval", "testPlaceholder"}
     numReturns = 0
-    return name, functions, numReturns
+    imageBounds = {0, 96, 15, 105}
+    return name, functions, numReurns, imageBounds
 end
 
 function testAll(playerHealth, playerEnergy, gunFirespeed) -- With all parameters
