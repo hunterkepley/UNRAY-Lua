@@ -18,12 +18,14 @@ For example: `healthPack.lua`
 
 **0:name, 1:functionName, 2:numReturns, 3:imageBounds**
 
+- Separate imageBounds numbers (minX, minY, maxX, maxY) with semicolons
+
 ```go
 function getInformation()
     name = "testItem"
     functionName = "test"
     numReturns = 0
-    imageBounds = "0, 96, 15, 105"
+    imageBounds = "0;96;15;105;"
     return name, functionName, numReturns, imageBounds
 end
 ```
@@ -54,7 +56,7 @@ function getInformation()
     name = "testItem"
     functionName = "test"
     numReturns = 0
-    imageBounds = "0, 96, 15, 105"
+    imageBounds = "0;96;15;105;"
     return name, functionName, numReturns, imageBounds
 end
 
