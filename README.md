@@ -38,13 +38,13 @@ end
 
 #### All parameters you can use (in proper order)
 
-**playerHealth, playerEnergy, gunFirespeed**
+- *playerHealth, playerEnergy, gunFirespeed*
 
 #### All returns you can use (in proper order)
 
-**isFinished, playerHealth, playerEnergy**
+- *isFinished, playerHealth, playerEnergy*
 
-*Remember, you must return in reverse order, refer to testItem.lua for an example*
+***Remember, you must return in reverse order, refer to testItem.lua for an example***
 
 ### Making a function:
 
