@@ -1,5 +1,9 @@
 # Item files in UNRAY
 
+### Libraries used:
+
+- [gopher-lua](https://github.com/yuin/gopher-lua) by yuin
+
 ## Naming:
 
 Item files are in the format `itemName.lua`
@@ -13,10 +17,10 @@ For example: `healthPack.lua`
 ```go
 function getInformation()
     name = "testItem"
-    functions = {"test"}
+    functionName = "test"
     numReturns = 0
-    imageBounds = {0, 96, 15, 105}
-    return name, functions, numReturns, imageBounds
+    imageBounds = "0, 96, 15, 105"
+    return name, functionName, numReturns, imageBounds
 end
 ```
 
@@ -33,36 +37,45 @@ end
 
 function getInformation()
     name = "testItem"
-    functions = {"testAll", "testSome", "testNone", "testRemoval", "testPlaceholder"}
+    functionName = "test"
     numReturns = 0
-    imageBounds = {0, 96, 15, 105}
-    return name, functions, numReurns, imageBounds
+    imageBounds = "0, 96, 15, 105"
+    return name, functionName, numReturns, imageBounds
 end
 
-function testAll(playerHealth, playerEnergy, gunFirespeed) -- With all parameters
+-- With all parameters
+
+function test(playerHealth, playerEnergy, gunFirespeed) 
     print(playerHealth)
 end
 
-function testSome(playerHealth, playerEnergy) -- Without some parameters
+-- Without some parameters
+
+function test(playerHealth, playerEnergy) 
     print(playerEnergy)
 end
 
-function testNone() -- Without any parameters
+-- Without any parameters 
+
+function test() 
     print("No parameters!")
 end
 
-function testRemoval(gunFirespeed) -- Will not properly!
+-- Will not properly!
+
+function test(gunFirespeed) 
     print(gunFirespeed)
 end
 
-function testPlaceholder(_, _, gunFirespeed) -- A solution to the above problem
+-- A solution to the above problem
+
+function test(_, _, gunFirespeed) 
     print(gunFirespeed)
 end
 ```
 
 *Functions are simple and you can pretty much do whatever you want*
 
-**Make sure to return either a number or a string, in most cases, strings are preferred**
 
 
 
