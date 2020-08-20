@@ -14,6 +14,10 @@ For example: `healthPack.lua`
 
 ### Information function:
 
+#### All returns for getInformation (in proper order)
+
+**0:name, 1:functionName, 2:numReturns, 3:imageBounds**
+
 ```go
 function getInformation()
     name = "testItem"
@@ -26,12 +30,23 @@ end
 
 *Return a name and a list of the function names*
 
-### Making a function:
-
-**One important note:**
+### Parameters/Returns
 
 - You must make the function parameters the same order as this
 - You can choose to leave out as many of these as you need, but treat it as a stack [remove from right to left, do not remove anything from the middle]
+- The same goes for function returns as it does for parameters!
+
+#### All parameters you can use (in proper order)
+
+**playerHealth, playerEnergy, gunFirespeed**
+
+#### All returns you can use (in proper order)
+
+**isFinished, playerHealth, playerEnergy**
+
+*Remember, you must return in reverse order, refer to testItem.lua for an example*
+
+### Making a function:
 
 ```lua
 
@@ -61,7 +76,7 @@ function test()
     print("No parameters!")
 end
 
--- Will not properly!
+-- Will not work properly!
 
 function test(gunFirespeed) 
     print(gunFirespeed)

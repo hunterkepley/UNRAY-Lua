@@ -1,11 +1,13 @@
 function getInformation()
     name = "testItem"
     functionName = "test"
-    numReturns = 0
+    numReturns = 1
     imageBounds = "0, 96, 15, 105"
-    return name, functionName, numReturns, imageBounds
+    return imageBounds, numReturns, functionName, name
 end
 
+-- This function just adds one to the player's energy then returns it
 function test(playerHealth, playerEnergy, gunFirespeed)
-    print(playerEnergy)
+    isFinished = true
+    return playerEnergy + 1, playerHealth, isFinished
 end
