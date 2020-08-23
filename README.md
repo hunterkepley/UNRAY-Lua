@@ -1,10 +1,10 @@
-# Item files in UNRAY
+# Item file API for UNRAY
 
 ### Libraries used:
 
 - [gopher-lua](https://github.com/yuin/gopher-lua) by yuin
 
-## Naming:
+## File naming:
 
 Item files are in the format `itemName.lua`
 
@@ -18,7 +18,7 @@ For example: `healthPack.lua`
 
 **0:name, 1:functionName, 2:numReturns, 3:imageBounds**
 
-- Separate imageBounds numbers (minX, minY, maxX, maxY) with semicolons
+- Separate imageBounds numbers with semicolons *Ex: (minX; minY; maxX; maxY;)*
 
 ```go
 function getInformation()
@@ -30,13 +30,8 @@ function getInformation()
 end
 ```
 
-*Return a name and a list of the function names*
-
-### Parameters/Returns
-
-- You must make the function parameters the same order as this
-- You can choose to leave out as many of these as you need, but treat it as a stack [remove from right to left, do not remove anything from the middle]
-- The same goes for function returns as it does for parameters!
+You must return these variables in this order, I would just copy paste and edit this from here 
+or another file
 
 #### All parameters you can use (in proper order)
 
@@ -50,6 +45,13 @@ end
 
 ### Making a function:
 
+- When you are designing an item, consider whether it will be an item that continually 
+runs its function, or stops after a single use.
+- - An example of an item that runs continually would be an item that makes bullets explode 
+into shrapnel every single bullet, over and over.
+- - An example of an item that runs once then stops after a single use and deletes itself would 
+be a health pack, you heal once, that's it.
+
 ```lua
 
 function getInformation()
@@ -60,38 +62,14 @@ function getInformation()
     return name, functionName, numReturns, imageBounds
 end
 
--- With all parameters
-
-function test(playerHealth, playerEnergy, gunFirespeed) 
-    print(playerHealth)
-end
-
--- Without some parameters
-
-function test(playerHealth, playerEnergy) 
-    print(playerEnergy)
-end
-
--- Without any parameters 
-
 function test() 
-    print("No parameters!")
-end
+    SetPlayerHealth(1)
 
--- Will not work properly!
-
-function test(gunFirespeed) 
-    print(gunFirespeed)
-end
-
--- A solution to the above problem
-
-function test(_, _, gunFirespeed) 
-    print(gunFirespeed)
+    return true -- Discard item after using function once
 end
 ```
 
-*Functions are simple and you can pretty much do whatever you want*
+*Functions are simple and you can pretty much do whatever you want within the bounds of my API*
 
 
 
