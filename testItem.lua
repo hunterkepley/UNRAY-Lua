@@ -8,6 +8,6 @@ end
 
 -- This function just adds one to the player's energy then returns it
 function test()
-    SetPlayerHealth(1)
+    SetPlayerHealth(PlayerHealth() + PlayerEnergy() - PlayerWalkSpeed()) -- Set the player's health to a weird value
     return true
 end
