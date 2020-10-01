@@ -74,6 +74,9 @@ PlayerEnergy() -- Returns the player's current energy
 SetPlayerWalkSpeed(Number) -- Pass a number in to change the player's walk speed
 PlayerWalkSpeed() -- Returns the player's current walk speed
 
+SetPlayerRunSpeed(Number) -- Pass a number in to change the player's run speed
+PlayerRunSpeed() -- Returns the player's current run speed
+
 SetGunFireSpeed(Number) -- Pass a number in to change the player's gun fire speed
 GunFireSpeed() -- Returns the player's gun fire speed
 
