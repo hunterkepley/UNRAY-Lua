@@ -76,6 +76,9 @@ PlayerWalkSpeed() -- Returns the player's current walk speed
 
 SetGunFireSpeed(Number) -- Pass a number in to change the player's gun fire speed
 GunFireSpeed() -- Returns the player's gun fire speed
+
+SetAccuracy(Number) -- Pass a number in to change the player's accuracy with firearms
+Accuracy() -- Returns the player's accuracy with firearms
 ```
 
 
