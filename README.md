@@ -82,6 +82,9 @@ GunFireSpeed() -- Returns the player's gun fire speed
 
 SetAccuracy(Number) -- Pass a number in to change the player's accuracy with firearms
 Accuracy() -- Returns the player's accuracy with firearms
+
+SetGunRange(Number) -- Pass a number in to change the player's gun range with firearms
+GunRange() -- Returns the player's gun range with firearms
 ```
 
 
